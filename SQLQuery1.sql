@@ -44,3 +44,23 @@ INSERT INTO tb_Produtos VALUES (4.5,'Suco de Manga');
 
 --Com os nomes das colunas
 INSERT INTO tb_Produtos(vlProduto, nmProduto) VALUES (3.5,'Suco de Manga');
+
+
+--Remover a tabela de vendas
+DROP TABLE tb_Vendas
+
+
+CREATE TABLE tb_Vendas (
+cdVenda INT PRIMARY KEY IDENTITY(1,1),
+cdCliente INT FOREIGN KEY REFERENCES tb_Clientes (cdCliente),
+dtVenda DATETIME NOT NULL
+
+);
+
+CREATE TABLE tb_ProdutoVenda(
+cdProdutoVenda INT PRIMARY KEY IDENTITY(1,1),
+cdVenda INT FOREIGN KEY REFERENCES tb_Vendas (cdVenda) NOT NULL,
+cdProduto INT FOREIGN KEY REFERENCES tb_Produtos(cdProduto) NOT NULL,
+qtProduto INT NOT NULL
+
+);
