@@ -11,3 +11,15 @@ INSERT INTO tb_Produtos(vlProduto, nmProduto) VALUES (3.5,'Suco de Manga');
 
 --testando o constraint
 INSERT INTO tb_Vendas VALUES (4, 3.2)
+
+--Selecionando dados das tabelas
+--SELECT[Colunas] FROM [Tabela]
+
+
+
+SELECT nmProduto, cdProduto, vlProduto FROM tb_Produtos;
+
+SELECT cdProduto FROM tb_Produtos;
+
+SELECT cdProduto, nmProduto, vlProduto FROM tb_Produtos;
+SELECT * FROM tb_Vendas
